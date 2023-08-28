@@ -15,4 +15,4 @@ public class purchase extends itemList {
 
     }
 
-    yestin
+    yest
