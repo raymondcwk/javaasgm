@@ -4,13 +4,15 @@ import java.util.List;
 import java.util.Scanner;
 public class purchase extends itemList {
     int choice;
-    public static void purchase(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        public static void purchase(String[] args) {
+            Scanner sc = new Scanner(System.in);
 
-        System.out.print("Please select your item :");
-        int choice = sc.nextInt();
+            System.out.print("Please select your item :");
+            int choice = sc.nextInt();
 
 
-        }
+            }
 
     }
+
+    yesting
