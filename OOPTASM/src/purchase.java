@@ -14,4 +14,3 @@ public class purchase extends itemList {
         }
 
     }
-testing
