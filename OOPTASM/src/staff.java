@@ -23,7 +23,7 @@ public class staff {
         // Check if the entered username and password match the correct credentials
         if (username.equals(adminUsername) && password.equals(adminPassword)) {
             System.out.println("Access granted. Welcome to the admin main page!");
-            // Add your admin main page code here
+            // Add your admin main page code here, run everything inside here I guess, IDFK
         } else {
             System.out.println("Access denied. Incorrect username or password.");
         }
