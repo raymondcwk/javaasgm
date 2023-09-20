@@ -2,6 +2,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
 public class billing {
     public static void main(String[] args) {
         // Define the payment methods
@@ -44,16 +48,22 @@ public class billing {
         String selection = scanner.nextLine();
 
         // Process the payment
-        if (paymentMethods.containsKey(selection)) {
-            System.out.println("Payment processed - " + paymentMethods.get(selection));
-        }
+        if (selection.equals("2")) {
+            // Create an instance of the Item class for the virtual banking code
+            Item item = new Item("Virtual Banking Code", totalPrice);
 
-        else {
+            // Pass the item to the virtual banking code
+            VirtualBank.main(new String[]{item.getName(), String.valueOf(item.getPrice())});
+
+            System.out.println("Payment processed - Online Bank Transfer");
+        } else if (paymentMethods.containsKey(selection)) {
+            System.out.println("Payment processed - " + paymentMethods.get(selection));
+        } else {
             System.out.println("Invalid selection");
         }
-
     }
 }
+
 
 class Item {
     private String name;
