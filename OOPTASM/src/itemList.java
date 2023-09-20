@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class itemList {
-    public static void main(String[] args) {
+    public static void main() {
         List<List<String>> phoneList = new ArrayList<>();
         phoneList.add(null); // Add a null element at index 0 to skip it.
 
