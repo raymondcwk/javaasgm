@@ -11,7 +11,7 @@ public class staff {
     public static void main(String[] args) {
         // Define the correct username and password
         String adminUsername = "admin";
-        String adminPassword = "password123";
+        String adminPassword = "12345";
 
         // Create a Scanner object to read user input
         Scanner scanner = new Scanner(System.in);
