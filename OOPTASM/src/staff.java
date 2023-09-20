@@ -69,7 +69,7 @@ public class staff {
                 case 3:
                     System.out.println("You selected 'Stock'.");
                     // Add your stock code here
-                    itemList.main();
+                    Stock.main();
                     break;
                 case 4:
                     System.out.println("Exiting the program.");
