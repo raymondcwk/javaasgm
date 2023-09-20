@@ -11,7 +11,7 @@ public class staff {
     public static void main(String[] args) {
         // Define the correct username and password
         String adminUsername = "admin";
-        String adminPassword = "password123";
+        String adminPassword = "12345";
 
         // Create a Scanner object to read user input
         Scanner scanner = new Scanner(System.in);
@@ -60,14 +60,16 @@ public class staff {
                 case 1:
                     System.out.println("You selected 'Purchase'.");
                     // Add your purchase code here
+                    purchase.purchase();
                     break;
                 case 2:
                     System.out.println("You selected 'Billing'.");
                     // Add your billing code here
                     break;
                 case 3:
-                    System.out.println("You selected 'Report'.");
-                    // Add your report code here
+                    System.out.println("You selected 'Stock'.");
+                    // Add your stock code here
+                    itemList.main();
                     break;
                 case 4:
                     System.out.println("Exiting the program.");
