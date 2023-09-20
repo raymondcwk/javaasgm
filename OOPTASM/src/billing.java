@@ -2,10 +2,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-
 public class billing {
     public static void main(String[] args) {
         // Define the payment methods
@@ -66,8 +62,8 @@ public class billing {
 
 
 class Item {
-    private String name;
-    private double price;
+    private final String name;
+    private final double price;
 
     public Item(String name, double price) {
         this.name = name;
