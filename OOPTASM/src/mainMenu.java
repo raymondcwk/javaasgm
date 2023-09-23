@@ -8,9 +8,9 @@ public class mainMenu {
 
         while (true) {
             System.out.println("Main Menu:");
-            System.out.println("1. Purchase");
+            System.out.println("1. Phone List");
             System.out.println("2. Billing");
-            System.out.println("3. Report");
+            System.out.println("3. Stock");
             System.out.println("4. Exit");
             System.out.print("Enter your choice: ");
 
