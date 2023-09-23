@@ -18,7 +18,7 @@ public class mainMenu {
 
             switch (choice) {
                 case 1:
-                    System.out.println("You selected 'Purchase'.");
+                    System.out.println("You selected 'Phone List'.");
                     // Add your purchase code here
 
                     break;
