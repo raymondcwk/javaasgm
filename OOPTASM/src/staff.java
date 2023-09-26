@@ -8,8 +8,7 @@ import java.awt.event.ActionListener;
 
 public class staff {
 
-    public static void main(String[] args) {
-        //Go to staffLogin
-        staffLogin.main();
+    public static void main() {
+
     }
 }

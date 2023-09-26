@@ -20,17 +20,17 @@ public class mainMenu {
                 case 1:
                     System.out.println("You selected 'Phone List'.");
                     // Add your purchase code here
-
+                    purchaseMenu.main();
                     break;
                 case 2:
                     System.out.println("You selected 'Billing'.");
                     // Add your billing code here
-
+                    billing.main();
                     break;
                 case 3:
                     System.out.println("You selected 'Stock'.");
                     // Add your stock code here
-
+                    Stock.main();
                     break;
                 case 4:
                     System.out.println("Exiting the program.");

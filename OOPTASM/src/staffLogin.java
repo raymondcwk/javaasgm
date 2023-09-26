@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class staffLogin {
 
-    public static void main() {
+    public static void main(String[] args) {
 
         // Define the correct username and password
         String adminUsername = "admin";

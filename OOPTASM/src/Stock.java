@@ -1,9 +1,7 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Stock {
-    public static void main(String[] args) {
+    public static void main() {
         PhoneList phoneList = new PhoneList();
         Scanner scanner = new Scanner(System.in);
 

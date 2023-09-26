@@ -3,7 +3,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class VirtualBank {
-    public static void main(String[] args) {
+    public static void main() {
         // Define the accounts and their balances
         Map<String, Double> accounts = new HashMap<>();
         accounts.put("1", 1000.0);
