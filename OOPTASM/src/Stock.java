@@ -31,7 +31,7 @@ public class Stock {
                     phoneList.updatePhone(scanner);
                     break;
                 case 4:
-                    mainMenu.main();
+                    mainMenu.main(null);
                 default:
                     System.out.println("Invalid choice. Please select a valid operation.");
             }
