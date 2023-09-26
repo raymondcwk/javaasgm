@@ -7,10 +7,6 @@ public class Stock {
         PhoneList phoneList = new PhoneList();
         Scanner scanner = new Scanner(System.in);
 
-
-
-
-
         while (true) {
             phoneList.displayPhoneInventory();
             System.out.println("Phone Inventory Management:");
