@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class purchaseMenu {
 
-    public static void main(String[] args) {
+    public static void main() {
         Scanner scanner = new Scanner(System.in);
         PhoneList phoneList = new PhoneList(); // Create a PhoneList object here
         purchase purchase = new purchase();
