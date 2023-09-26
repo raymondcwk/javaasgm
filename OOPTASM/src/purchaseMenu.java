@@ -31,7 +31,7 @@ public class purchaseMenu {
                     purchase.printReceipt();
                     break;
                 case 5:
-                    mainMenu.main(null);
+                    mainMenu.main();
                 default:
                     System.out.println("Invalid choice. Please select a valid operation.");
             }

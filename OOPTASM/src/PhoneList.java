@@ -4,19 +4,31 @@ import java.util.Scanner;
 
 public class PhoneList {
     private static final List<Phone> phoneList = new ArrayList<>();
+    private static final List<Phone> addedItems = new ArrayList<>(); // Maintain a list of added items
     public PhoneList() {
-        Phone phone1 = new Phone("iPhone X", 999, 10);
-        Phone phone2 = new Phone("Samsung Galaxy S21", 899, 8);
-        Phone phone3 = new Phone("Google Pixel 6", 799, 12);
+        if (phoneList.isEmpty()) {
+            Phone phone1 = new Phone("iPhone X", 999, 10);
+            Phone phone2 = new Phone("Samsung Galaxy S21", 899, 8);
+            Phone phone3 = new Phone("Google Pixel 6", 799, 12);
 
-        phoneList.add(phone1);
-        phoneList.add(phone2);
-        phoneList.add(phone3);
+            phoneList.add(phone1);
+            phoneList.add(phone2);
+            phoneList.add(phone3);
+
+            // Add these items to the addedItems list to mark them as added
+            addedItems.addAll(phoneList);
+        }
     }
 
+
     public void addPhone(Phone phone) {
-        phoneList.add(phone);
-        System.out.println("Phone added successfully.");
+        if (!addedItems.contains(phone)) { // Check if the phone is not already added
+            phoneList.add(phone);
+            addedItems.add(phone); // Add the phone to the added items list
+            System.out.println("Phone added successfully.");
+        } else {
+            System.out.println("Phone is already added.");
+        }
     }
 
     public void deletePhone(Scanner scanner) {

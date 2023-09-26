@@ -31,8 +31,7 @@ public class Stock {
                     phoneList.updatePhone(scanner);
                     break;
                 case 4:
-                    scanner.close();
-                    System.exit(0);
+                    mainMenu.main();
                 default:
                     System.out.println("Invalid choice. Please select a valid operation.");
             }
@@ -45,6 +44,7 @@ public class Stock {
 
         double price = 0.0; // Initialize price as a double
         int quantity = 0;  // Initialize quantity as an int
+
 
         // Handling price input as a double
         boolean validPrice = false;
@@ -71,7 +71,6 @@ public class Stock {
                 System.out.println("Invalid quantity. Please enter a valid numeric value.");
             }
         }
-
         Phone newPhone = new Phone(model, price, quantity);
         phoneList.addPhone(newPhone);
     }
