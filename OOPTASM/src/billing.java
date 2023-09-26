@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class billing {
 
-    public static void main() {
+    public static void main(String[] args) {
 
         new PhoneList();
 

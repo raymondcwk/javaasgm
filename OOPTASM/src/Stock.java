@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Stock {
-    public static void main() {
+    public static void main(String[] args) {
         PhoneList phoneList = new PhoneList();
         Scanner scanner = new Scanner(System.in);
 
