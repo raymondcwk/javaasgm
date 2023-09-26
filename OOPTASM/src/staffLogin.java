@@ -25,11 +25,11 @@ public class staffLogin {
             // Check if the entered username and password match the correct credentials
             if (username.equals(adminUsername) && password.equals(adminPassword)) {
                 loggedIn = true; // Set the flag to true for successful login
-                System.out.println("Access granted. Welcome to the admin main page!");
+                System.out.println("<<Access granted. Welcome to the admin main page!>>");
                 // Call the main menu function here
-                mainMenu.main();
+                mainMenu.main(null);
             } else {
-                System.out.println("Access denied. Incorrect username or password.");
+                System.out.println("<<Access denied. Incorrect username or password!>>");
             }
         }
 

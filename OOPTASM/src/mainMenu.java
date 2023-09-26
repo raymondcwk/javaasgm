@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class mainMenu {
 
-    public static void main() {
+    public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
 
@@ -20,17 +20,17 @@ public class mainMenu {
                 case 1:
                     System.out.println("You selected 'Phone List'.");
                     // Add your purchase code here
-                    purchaseMenu.main();
+                    purchaseMenu.main(null);
                     break;
                 case 2:
                     System.out.println("You selected 'Billing'.");
                     // Add your billing code here
-                    billing.main();
+                    billing.main(null);
                     break;
                 case 3:
                     System.out.println("You selected 'Stock'.");
                     // Add your stock code here
-                    Stock.main();
+                    Stock.main(null);
                     break;
                 case 4:
                     System.out.println("Exiting the program.");

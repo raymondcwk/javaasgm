@@ -3,7 +3,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class billing {
-    public static void main() {
+    public static void main(String[] args) {
         // Define the payment methods
         Map<String, String> paymentMethods = new HashMap<>();
         paymentMethods.put("1", "Cash");
