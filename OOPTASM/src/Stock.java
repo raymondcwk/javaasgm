@@ -1,28 +1,24 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Stock {
-    public static staff PhoneList;
-
     public static void main(String[] args) {
         PhoneList phoneList = new PhoneList();
         Scanner scanner = new Scanner(System.in);
 
-        Phone phone1 = new Phone("iPhone X", "999 USD", "10");
-        Phone phone2 = new Phone("Samsung Galaxy S21", "899 USD", "8");
-        Phone phone3 = new Phone("Google Pixel 6", "799 USD", "12");
 
 
-        phoneList.addPhone(phone1);
-        phoneList.addPhone(phone2);
-        phoneList.addPhone(phone3);
+
 
         while (true) {
+            phoneList.displayPhoneInventory();
             System.out.println("Phone Inventory Management:");
             System.out.println("1. Add Phone");
             System.out.println("2. Delete Phone");
             System.out.println("3. Update Phone");
-            System.out.println("4. Display Phone Inventory");
-            System.out.println("5. Exit");
+
+            System.out.println("4. Exit");
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
 
@@ -37,9 +33,6 @@ public class Stock {
                     phoneList.updatePhone(scanner);
                     break;
                 case 4:
-                    phoneList.displayPhoneInventory();
-                    break;
-                case 5:
                     scanner.close();
                     System.exit(0);
                 default:
@@ -51,10 +44,35 @@ public class Stock {
     private static void addPhone(PhoneList phoneList, Scanner scanner) {
         System.out.print("Enter model: ");
         String model = scanner.next();
-        System.out.print("Enter price: ");
-        String price = scanner.next();
-        System.out.print("Enter quantity: ");
-        String quantity = scanner.next();
+
+        double price = 0.0; // Initialize price as a double
+        int quantity = 0;  // Initialize quantity as an int
+
+        // Handling price input as a double
+        boolean validPrice = false;
+        while (!validPrice) {
+            System.out.print("Enter price: ");
+            String priceStr = scanner.next();
+            try {
+                price = Double.parseDouble(priceStr);
+                validPrice = true; // Exit the loop if parsing is successful
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid price. Please enter a valid numeric value.");
+            }
+        }
+
+        // Handling quantity input as an int
+        boolean validQuantity = false;
+        while (!validQuantity) {
+            System.out.print("Enter quantity: ");
+            String quantityStr = scanner.next();
+            try {
+                quantity = Integer.parseInt(quantityStr);
+                validQuantity = true; // Exit the loop if parsing is successful
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid quantity. Please enter a valid numeric value.");
+            }
+        }
 
         Phone newPhone = new Phone(model, price, quantity);
         phoneList.addPhone(newPhone);

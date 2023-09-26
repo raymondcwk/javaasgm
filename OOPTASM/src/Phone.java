@@ -1,13 +1,18 @@
 public class Phone {
     private String model;
-    private String price;
-    private String quantity;
+    private double price;
+    private int quantity;
 
-    public Phone(String model, String price, String quantity) {
+    public Phone(String model, double price, int quantity) {
         this.model = model;
         this.price = price;
         this.quantity = quantity;
     }
+
+    public static int size() {
+        return size();
+    }
+
 
     public String getModel() {
         return model;
@@ -17,19 +22,21 @@ public class Phone {
         this.model = model;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
-    public String getQuantity() {
+    public int getQuantity() {
+
         return quantity;
     }
 
-    public void setQuantity(String quantity) {
+    public void setQuantity(int quantity) {
+
         this.quantity = quantity;
     }
 }

@@ -25,7 +25,7 @@ public class mainMenu {
                 case 2:
                     System.out.println("You selected 'Billing'.");
                     // Add your billing code here
-                    billing.main();
+
                     break;
                 case 3:
                     System.out.println("You selected 'Stock'.");
