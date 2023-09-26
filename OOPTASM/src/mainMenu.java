@@ -7,11 +7,14 @@ public class mainMenu {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("Main Menu:");
-            System.out.println("1. Phone List");
-            System.out.println("2. Billing");
-            System.out.println("3. Stock");
-            System.out.println("4. Exit");
+            System.out.println("+=====================+");
+            System.out.println("|      Main Menu      |");
+            System.out.println("+=====================+");
+            System.out.println("|1. Phone List        |");
+            System.out.println("|2. Billing           |");
+            System.out.println("|3. Stock             |");
+            System.out.println("|4. Exit              |");
+            System.out.println("+=====================+");
             System.out.print("Enter your choice: ");
 
             int choice = scanner.nextInt();
