@@ -32,15 +32,19 @@ public class purchase {
         System.out.println("Receipt:");
         System.out.printf("%-5s %-20s %-10s %-10s %-10s%n", "Item", "Model", "Price(RM)", "Quantity", "Subtotal(RM)");
 
+        // Iterate over purchased phones and print them with updated item numbers
+        int itemNumber = 1;
         for (PurchasedPhone purchasedPhone : purchasedPhones) {
             Phone phone = purchasedPhone.getPhone();
             double subtotal = phone.getPrice() * purchasedPhone.getQuantity();
             total += subtotal;
-            System.out.printf("%-5d %-20s %-10.2f %-10d %-10.2f%n", purchasedPhone.getItemNumber(itemCounter + 1), phone.getModel(), phone.getPrice(), purchasedPhone.getQuantity(), subtotal);
+            System.out.printf("%-5d %-20s %-10.2f %-10d %-10.2f%n", itemNumber, phone.getModel(), phone.getPrice(), purchasedPhone.getQuantity(), subtotal);
+            itemNumber++;
         }
 
         System.out.printf("Total: RM %.2f%n", total);
     }
+
 
     public PurchasedPhone[] getPurchasedPhones() {
         return purchasedPhones.toArray(new PurchasedPhone[0]);
