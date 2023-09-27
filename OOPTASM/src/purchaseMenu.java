@@ -28,7 +28,7 @@ public class purchaseMenu {
                     updateQuantity(purchase, scanner);
                     break;
                 case 4:
-                    purchase.printReceipt();
+                    purchase.printReceipt(purchase.total);
                     break;
                 case 5:
                     mainMenu.main(null);
@@ -92,7 +92,7 @@ public class purchaseMenu {
 
     private static void removePhone(purchase purchase, Scanner scanner) {
         // Display the receipt with item numbers
-        purchase.printReceipt();
+        purchase.printReceipt(purchase.total);
 
         System.out.print("Enter the item number of the phone you want to remove: ");
         int itemNumber = scanner.nextInt();
@@ -113,7 +113,7 @@ public class purchaseMenu {
 
     private static void updateQuantity(purchase purchase, Scanner scanner) {
         // Display the receipt with item numbers;
-        purchase.printReceipt();
+        purchase.printReceipt(purchase.total);
 
         System.out.print("Enter the item number of the phone you want to update: ");
         int itemNumber = scanner.nextInt();

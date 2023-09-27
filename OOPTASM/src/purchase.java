@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class purchase {
-    private List<PurchasedPhone> purchasedPhones = new ArrayList<>();
+    public static double total;
+    private static List<PurchasedPhone> purchasedPhones = new ArrayList<>();
     private int itemCounter = 1;
 
     public void addPhone(Phone phone, int quantity) {
@@ -27,8 +28,8 @@ public class purchase {
         }
     }
 
-    public void printReceipt() {
-        double total = 0.0;
+    public static void printReceipt(double total) {
+        total = 0.0;
         System.out.println("Receipt:");
         System.out.printf("%-5s %-20s %-10s %-10s %-10s%n", "Item", "Model", "Price(RM)", "Quantity", "Subtotal(RM)");
 

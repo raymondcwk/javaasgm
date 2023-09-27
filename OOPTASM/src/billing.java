@@ -4,13 +4,14 @@ public class billing {
 
     public static void main(String[] args) {
 
-        new PhoneList();
-
-        // Printing the phone list
-        PhoneList.displayPhoneInventory();
-
         // Ask the user to select a payment method
         Scanner scanner = new Scanner(System.in);
+
+        // Print the receipt
+        purchase.printReceipt(purchase.total);
+
+        // For printing new line
+        System.out.print("\n");
 
         // For printing the Billing Title
         System.out.println("BILLING" + "\n");
