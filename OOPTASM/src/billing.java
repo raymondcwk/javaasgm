@@ -16,15 +16,16 @@ public class billing {
         // For printing the Billing Title
         System.out.println("BILLING" + "\n");
 
-        while (true) {
-            // For printing the Payment Method
-            System.out.println("+--------------------------+");
-            System.out.println("| 1 - Cash                 |");
-            System.out.println("| 2 - Online Bank Transfer |");
-            System.out.println("+--------------------------+" + "\n");;
-            System.out.print("Select a payment method --> ");
+        // For printing the Payment Method
+        System.out.println("+--------------------------+");
+        System.out.println("| 1 - Cash                 |");
+        System.out.println("| 2 - Online Bank Transfer |");
+        System.out.println("+--------------------------+" + "\n");;
+        System.out.print("Select a payment method --> ");
 
-            int paymentMethod = scanner.nextInt();
+        int paymentMethod = scanner.nextInt();
+
+        while (paymentMethod == 1 || paymentMethod == 2) {
 
             // To check the payment method
             switch(paymentMethod)
@@ -40,10 +41,53 @@ public class billing {
                 default:
                     System.out.print("Invalid Option. Please Select Again");
             }
+
+            // For printing the Payment Method
+            System.out.println("+--------------------------+");
+            System.out.println("| 1 - Cash                 |");
+            System.out.println("| 2 - Online Bank Transfer |");
+            System.out.println("| 3 - Exit                 |");
+            System.out.println("+--------------------------+" + "\n");;
+            System.out.print("Select a payment method --> ");
+
+            paymentMethod = scanner.nextInt();
+
         }
     }
 
     public static void CashMethod() {
-        System.out.print("Welcome to Cash Method Payment");
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("CASH PAYMENT METHOD");
+        System.out.println("-------------------");
+        System.out.print("The total price to be paid is RM" + purchase.getTotal() + "\n");
+        System.out.print("\n\n");
+
+        while (true) {
+            System.out.print("Enter the Payment --> RM ");
+            double cashPayment = scanner.nextDouble();
+
+            if (cashPayment < purchase.getTotal()) {
+
+                System.out.print("Invalid Amount. Please Enter a amount that is more than " + purchase.getTotal());
+                System.out.print("\n");
+
+            }
+
+            else {
+
+                double cashBalance = cashPayment - purchase.getTotal();
+
+                System.out.println("Thank You !!!");
+                System.out.print("Your Balance Fund is RM" + cashBalance);
+                System.out.print("\n");
+
+                break;
+
+            }
+        }
+
+
     }
 }
