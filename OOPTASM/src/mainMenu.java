@@ -24,27 +24,27 @@ public class mainMenu {
 
             switch (choice) {
                 case 1:
-                    System.out.println("You selected 'Phone List'.");
+
                     // Add your purchase code here
                     purchaseMenu.main(null);
                     break;
                 case 2:
-                    System.out.println("You selected 'Billing'.");
+
                     // Add your billing code here
                     billing.main(null);
                     break;
                 case 3:
-                    System.out.println("You selected 'Stock'.");
+
                     // Add your stock code here
                     Stock.main(null);
                     break;
                 case 4:
-                    System.out.println("Exiting the program.");
-                    System.out.println("Thanks for using :)");
+                    System.out.println("\n\u001B[32m                     Exiting the program!\u001B[0m\n");
+                    System.out.println("\u001B[32m                     Thanks for using :)\u001B[0m");
                     scanner.close();
                     System.exit(0);
                 default:
-                    System.out.println("Invalid choice. Please try again.");
+                    System.out.println("\n \u001B[31m              Invalid choice. Please try again!\u001B[0m\n");
                     break;
             }
         }
