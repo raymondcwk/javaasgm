@@ -1,95 +1,72 @@
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class VirtualBank {
-    public static void main(String[] args) {
-        // Define the accounts and their balances
-        Map<String, Double> accounts = new HashMap<>();
-        accounts.put("1", 1000.0);
-        accounts.put("2", 2000.0);
-        accounts.put("3", 3000.0);
+    public static void main() {
 
-        // Define the scanner object
         Scanner scanner = new Scanner(System.in);
 
-        // Loop until the user chooses to exit
-        while (true) {
-            // Print the menu
-            System.out.println("Virtual Banking System");
-            System.out.println("1. Check balance");
-            System.out.println("2. Transfer money");
-            System.out.println("3. Exit");
+        // Define the bank account
+        String BankAcc = "123456789";
+        String BankPin = "0000";
+        double BankFund = 1_000_000.00;
 
-            // Ask the user to select an option
-            System.out.print("Enter your selection: ");
-            String selection = scanner.nextLine();
+        // Display the menu
+        System.out.println("VIRTUAL BANK SYSTEM");
+        System.out.println("-------------------");
+        System.out.println("1 - Bank");
+        System.out.println("2 - Exit");
+        System.out.println("-------------------");
+        System.out.print("Enter choice --> ");
+        String BankChoice = scanner.nextLine();
 
-            // Process the user's selection
-            switch (selection) {
+        while (!BankChoice.equals("2")) {
 
-                case "1":
-                    // Check the balance of the selected account
-                    System.out.print("Enter the account number: ");
-                    String accountNumber = scanner.nextLine();
+            if (BankChoice.equals("1")) {
+                // Ask user to enter bank account number
+                System.out.print("Enter Bank Account --> ");
+                String inputBankAcc = scanner.nextLine();
 
-                    if (accounts.containsKey(accountNumber)) {
-                        System.out.println("Balance: $" + accounts.get(accountNumber));
-                    }
+                // Check if the input matches the defined bank account
+                while (!inputBankAcc.equals(BankAcc)) {
+                    System.out.println("Invalid account number...");
+                    System.out.print("Enter Bank Account --> ");
+                    inputBankAcc = scanner.nextLine();
+                }
 
-                    else {
-                        System.out.println("Account not found");
-                    }
+                // Ask user to enter PIN
+                System.out.print("Enter PIN --> ");
+                String inputPIN = scanner.nextLine();
 
-                    break;
+                // Validation
+                while (!inputPIN.equals(BankPin)) {
+                    System.out.println("Invalid PIN...");
+                    System.out.print("Enter PIN --> ");
+                    inputPIN = scanner.nextLine();
+                }
 
-                case "2":
-                    // Transfer money from one account to another
-                    System.out.print("Enter the account number to transfer from: ");
-                    String fromAccountNumber = scanner.nextLine();
+                // PIN is correct, display the receipt and ask for payment
+                purchase.printReceipt(purchase.total);
 
-                    System.out.print("Enter the account number to transfer to: ");
-                    String toAccountNumber = scanner.nextLine();
+                System.out.print("The total price to be paid is " + purchase.total);
 
-                    System.out.print("Enter the amount to transfer: ");
-                    double amount = scanner.nextDouble();
-                    scanner.nextLine(); // Consume the newline character
-
-                    if (accounts.containsKey(fromAccountNumber) && accounts.containsKey(toAccountNumber)) {
-
-                        double fromBalance = accounts.get(fromAccountNumber);
-                        double toBalance = accounts.get(toAccountNumber);
-
-                        if (fromBalance >= amount) {
-
-                            fromBalance -= amount;
-                            toBalance += amount;
-                            accounts.put(fromAccountNumber, fromBalance);
-                            accounts.put(toAccountNumber, toBalance);
-                            System.out.println("Transfer successful");
-                        }
-
-                        else {
-                            System.out.println("Insufficient funds");
-                        }
-
-                    }
-
-                    else {
-                        System.out.println("Account not found");
-                    }
-
-                    break;
-
-                case "3":
-                    // Exit the program
-                    System.out.println("Exiting...");
-                    System.exit(0);
-
-                default:
-                    // Invalid selection
-                    System.out.println("Invalid selection");
             }
+
+            else {
+                System.out.println("Invalid option. Please enter a valid choice.");
+            }
+
+            // Display the menu again
+            System.out.println("VIRTUAL BANK SYSTEM");
+            System.out.println("-------------------");
+            System.out.println("1 - Bank");
+            System.out.println("2 - Exit");
+            System.out.println("-------------------");
+            System.out.print("Enter choice --> ");
+            BankChoice = scanner.nextLine();
         }
+
+        // End the program
+        System.out.println("Thank you for using the Virtual Bank System!");
+
     }
 }
