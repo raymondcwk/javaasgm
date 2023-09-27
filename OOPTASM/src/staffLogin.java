@@ -11,6 +11,10 @@ public class staffLogin {
         // Create a Scanner object to read user input
         Scanner scanner = new Scanner(System.in);
 
+        // Variable for attempts on login
+        int maxAttempts = 3; // Maximum allowed login attempts
+        int attempts = 0;    // Counter for login attempts
+
         // ANSI escape code for setting text color to black
         String blackColor = "\u001B[30m";
         // ANSI escape code for setting text color to red
@@ -62,7 +66,14 @@ public class staffLogin {
                 // Call the main menu function here
                 mainMenu.main(null);
             } else {
+                attempts++;
                 System.out.println("\u001B[31m\n               <<Access denied. Incorrect username or password!>>\u001B[0m\n");
+                if (attempts < maxAttempts) {
+                    System.out.println("\u001B[34m                     You have " + (maxAttempts - attempts) + " login attempts left!\u001B[0m \n");
+                } else {
+                    System.out.println("\u001B[35m              Maximum login attempts reached. Exiting the program!\u001B[0m");
+                    System.exit(0);
+                }
             }
         }
 

@@ -7,12 +7,18 @@ public class mainMenu {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("Main Menu:");
-            System.out.println("1. Phone List");
-            System.out.println("2. Billing");
-            System.out.println("3. Stock");
-            System.out.println("4. Exit");
-            System.out.print("Enter your choice: ");
+            System.out.println("\u001B[36m          |\\  /|   /\\   | |\\  |   |\\  /| |--- |\\  | |    |");
+            System.out.println("          | \\/ |  /__\\  | | \\ |   | \\/ | |--  | \\ | |    |");
+            System.out.println("          |    | /    \\ | |  \\|   |    | |--- |  \\|  \\__/ \u001B[0m\n");
+            System.out.println("            +------------------------------------------+");
+            System.out.println("            | Selection |   Function                   |");
+            System.out.println("            +------------------------------------------+");
+            System.out.println("            |     1     |   Purchase                   |");
+            System.out.println("            |     2     |   Billing                    |");
+            System.out.println("            |     3     |   Report                     |");
+            System.out.println("            |     4     |   Exit                       |");
+            System.out.println("            +------------------------------------------+\n");
+            System.out.print("\u001B[33m                     Enter your choice: \u001B[0m");
 
             int choice = scanner.nextInt();
 
@@ -34,6 +40,7 @@ public class mainMenu {
                     break;
                 case 4:
                     System.out.println("Exiting the program.");
+                    System.out.println("Thanks for using :)");
                     scanner.close();
                     System.exit(0);
                 default:
