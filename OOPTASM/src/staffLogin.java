@@ -48,11 +48,11 @@ public class staffLogin {
             System.out.println("                        \u001B[31m!ONLY FOR AUTHORIZED USER ONLY! \u001B[0m");
             System.out.println("  ");
             // Prompt the admin for their username
-            System.out.print("                        \u001B[33mEnter your username: ");
+            System.out.print("                          \u001B[33mEnter your username: ");
             String username = scanner.nextLine();
 
             // Prompt the admin for their password
-            System.out.print("                        Enter your password: \u001B[0m");
+            System.out.print("                          Enter your password: \u001B[0m");
             String password = scanner.nextLine();
 
             // Check if the entered username and password match the correct credentials
