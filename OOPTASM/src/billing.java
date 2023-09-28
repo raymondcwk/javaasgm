@@ -14,22 +14,24 @@ public class billing {
         System.out.print("\n");
 
         // For printing the Billing Title
-        System.out.println("BILLING" + "\n");
+        System.out.println( "\u001B[34m           __                  __ \n" +
+                            "          |__) | |  |  | |\\ | / __\n" +
+                            "          |__) | |_ |_ | | \\| \\__/\u001B[0m\n");
 
         // For printing the Payment Method
-        System.out.println("+--------------------------+");
-        System.out.println("| 1 - Cash                 |");
-        System.out.println("| 2 - Online Bank Transfer |");
-        System.out.println("+--------------------------+" + "\n");;
-        System.out.print("Select a payment method --> ");
+        System.out.println("         +--------------------------+");
+        System.out.println("         | 1 - Cash                 |");
+        System.out.println("         | 2 - Online Bank Transfer |");
+        System.out.println("         | 3 - Back                 |");
+        System.out.println("         +--------------------------+" + "\n");
 
-        int paymentMethod = scanner.nextInt();
+        int paymentMethod;
 
-        while (paymentMethod == 1 || paymentMethod == 2) {
+        do {
+            System.out.print("\u001B[33m       Select a payment method --> \u001B[0m");
+            paymentMethod = scanner.nextInt();
 
-            // To check the payment method
-            switch(paymentMethod)
-            {
+            switch (paymentMethod) {
                 case 1:
                     CashMethod();
                     break;
@@ -38,39 +40,32 @@ public class billing {
                     VirtualBank.main();
                     break;
 
+                case 3:
+                    mainMenu.main(null);
+                    break;
+
                 default:
-                    System.out.print("Invalid Option. Please Select Again");
+                    System.out.print("\n\u001B[31mInvalid Option. Please Select Again\u001B[0m\n\n");
             }
-
-            // For printing the Payment Method
-            System.out.println("+--------------------------+");
-            System.out.println("| 1 - Cash                 |");
-            System.out.println("| 2 - Online Bank Transfer |");
-            System.out.println("| 3 - Exit                 |");
-            System.out.println("+--------------------------+" + "\n");;
-            System.out.print("Select a payment method --> ");
-
-            paymentMethod = scanner.nextInt();
-
-        }
+        } while (paymentMethod < 1 || paymentMethod > 3);
     }
 
     public static void CashMethod() {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("CASH PAYMENT METHOD");
-        System.out.println("-------------------");
-        System.out.print("The total price to be paid is RM" + purchase.getTotal() + "\n");
+        System.out.println("\n\u001B[32m          CASH PAYMENT METHOD\u001B[0m");
+        System.out.println("          -------------------");
+        System.out.print("\u001B[32m      The total price to be paid is RM \u001B[0m" + purchase.getTotal() + "\n");
         System.out.print("\n\n");
 
         while (true) {
-            System.out.print("Enter the Payment --> RM ");
+            System.out.print("\u001B[33m          Enter the Payment --> RM \u001B[0m");
             double cashPayment = scanner.nextDouble();
 
             if (cashPayment < purchase.getTotal()) {
 
-                System.out.print("Invalid Amount. Please Enter a amount that is more than " + purchase.getTotal());
+                System.out.print("\u001B[31m       Invalid Amount. Please Enter a amount that is more than \u001B[0m" + purchase.getTotal());
                 System.out.print("\n");
 
             }
@@ -79,8 +74,8 @@ public class billing {
 
                 double cashBalance = cashPayment - purchase.getTotal();
 
-                System.out.println("Thank You !!!");
-                System.out.print("Your Balance Fund is RM" + cashBalance);
+                System.out.println("\u001B[32m        Thank You !!!\u001B[0m");
+                System.out.print("\u001B[32m    Your Balance Fund is RM \u001B[0m" + cashBalance);
                 System.out.print("\n");
 
                 break;

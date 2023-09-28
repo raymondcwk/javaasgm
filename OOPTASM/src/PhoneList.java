@@ -25,15 +25,17 @@ public class PhoneList {
         if (!addedItems.contains(phone)) { // Check if the phone is not already added
             phoneList.add(phone);
             addedItems.add(phone); // Add the phone to the added items list
-            System.out.println("Phone added successfully.");
+            System.out.println("        Phone added successfully.");
         } else {
-            System.out.println("Phone is already added.");
+            System.out.println("        Phone is already added.");
         }
     }
 
     public void deletePhone(Scanner scanner) {
+        scanner.nextLine();
+
         System.out.print("Enter model to delete: ");
-        String modelToDelete = scanner.next();
+        String modelToDelete = scanner.nextLine();
 
         boolean found = false;
 
@@ -54,15 +56,17 @@ public class PhoneList {
     }
 
     public void updatePhone(Scanner scanner) {
+        scanner.nextLine();
+
         System.out.print("Enter model to update: ");
-        String modelToUpdate = scanner.next();
+        String modelToUpdate = scanner.nextLine();
 
         boolean found = false;
 
         for (Phone phone : phoneList) {
             if (phone.getModel().equals(modelToUpdate)) {
                 System.out.print("Enter new model: ");
-                String newModel = scanner.next();
+                String newModel = scanner.nextLine();
                 System.out.print("Enter new price: ");
                 double newPrice = scanner.nextDouble();
                 System.out.print("Enter new quantity: ");
@@ -85,10 +89,12 @@ public class PhoneList {
 
     public static void displayPhoneInventory() {
         if (phoneList.isEmpty()) {
-            System.out.println("Phone inventory is empty.");
+            System.out.println("\u001B[31m          Phone inventory is empty!\u001B[0m");
         } else {
-            System.out.println("Phone Inventory:");
-            System.out.printf("%-5s %-20s %-20s %-20s%n", "Item", "Model", "Price(RM)", "Quantity");
+            System.out.println("        Phone Inventory:\n");
+            System.out.println("        ______________________________________________________________________________");
+            System.out.printf("        | %-5s | %-20s | %-20s | %-20s |%n", "Item", "Model", "Price(RM)", "Quantity");
+            System.out.println("        ______________________________________________________________________________");
             for (int i = 0; i < phoneList.size(); i++) {
                 // Increment the item number by 1 (starting from 1)
                 int itemNumber = i + 1;
@@ -107,7 +113,8 @@ public class PhoneList {
     }
 
     public static void displayPhone(Phone phone, int itemNumber) {
-        System.out.printf("%-5d %-20s %-20s %-20s%n", itemNumber, phone.getModel(), phone.getPrice(), phone.getQuantity());
+        System.out.printf("        | %-5d | %-20s | %-20s | %-20s |", itemNumber, phone.getModel(), phone.getPrice(), phone.getQuantity());
+        System.out.println("\n        ______________________________________________________________________________");
     }
     public int size() {
         return phoneList.size();

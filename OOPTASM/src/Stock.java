@@ -35,12 +35,13 @@ public class Stock {
     }
 
     private static void addPhone(PhoneList phoneList, Scanner scanner) {
+        scanner.nextLine(); // Consume the newline character from the previous input
+
         System.out.print("Enter model: ");
-        String model = scanner.next();
+        String model = scanner.nextLine(); // Read the model with spaces
 
         double price = 0.0; // Initialize price as a double
         int quantity = 0;  // Initialize quantity as an int
-
 
         // Handling price input as a double
         boolean validPrice = false;
@@ -67,6 +68,7 @@ public class Stock {
                 System.out.println("Invalid quantity. Please enter a valid numeric value.");
             }
         }
+
         Phone newPhone = new Phone(model, price, quantity);
         phoneList.addPhone(newPhone);
     }

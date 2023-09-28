@@ -15,7 +15,7 @@ public class mainMenu {
             System.out.println("            +------------------------------------------+");
             System.out.println("            |     1     |   Purchase                   |");
             System.out.println("            |     2     |   Billing                    |");
-            System.out.println("            |     3     |   Report                     |");
+            System.out.println("            |     3     |   Stock                      |");
             System.out.println("            |     4     |   Exit                       |");
             System.out.println("            +------------------------------------------+\n");
             System.out.print("\u001B[33m                     Enter your choice: \u001B[0m");
