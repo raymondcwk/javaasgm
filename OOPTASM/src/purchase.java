@@ -46,6 +46,16 @@ public class purchase {
         System.out.printf("Total: RM %.2f%n", total);
     }
 
+    public static double getTotal() {
+        double total = 0.0;
+        for (PurchasedPhone purchasedPhone : purchasedPhones) {
+            Phone phone = purchasedPhone.getPhone();
+            double subtotal = phone.getPrice() * purchasedPhone.getQuantity();
+            total += subtotal;
+        }
+        return total;
+    }
+
 
     public PurchasedPhone[] getPurchasedPhones() {
         return purchasedPhones.toArray(new PurchasedPhone[0]);

@@ -5,6 +5,8 @@ public class VirtualBank {
 
         Scanner scanner = new Scanner(System.in);
 
+        purchase Purchase = new purchase();
+
         // Define the bank account
         String BankAcc = "123456789";
         String BankPin = "0000";
@@ -47,8 +49,29 @@ public class VirtualBank {
                 // PIN is correct, display the receipt and ask for payment
                 purchase.printReceipt(purchase.total);
 
-                System.out.print("The total price to be paid is " + purchase.total);
+                System.out.print("\n\n");
 
+                System.out.print("The total price to be paid is RM" + purchase.getTotal() + "\n");
+
+                System.out.print("Are you sure you want to proceed this payment? (Y/N) --> ");
+                String paymentProceed = scanner.nextLine();
+
+                if (paymentProceed.equalsIgnoreCase("Y")) {
+
+                    // Calculate the balance bank fund
+                    BankFund = BankFund - purchase.getTotal();
+
+                    System.out.print("\n");
+                    System.out.println("Thank You For Choosing our Bank !!!");
+                    System.out.print("Your Bank Balance Fund is RM" + BankFund);
+                    System.out.print("\n\n");
+                }
+
+                else {
+
+                    billing.main(null);
+
+                }
             }
 
             else {
@@ -65,8 +88,7 @@ public class VirtualBank {
             BankChoice = scanner.nextLine();
         }
 
-        // End the program
-        System.out.println("Thank you for using the Virtual Bank System!");
+        billing.main(null);
 
     }
 }
