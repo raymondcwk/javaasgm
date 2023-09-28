@@ -74,9 +74,10 @@ public class billing {
 
                 double cashBalance = cashPayment - purchase.getTotal();
 
-                System.out.println("\u001B[32m        Thank You !!!\u001B[0m");
-                System.out.print("\u001B[32m    Your Balance Fund is RM \u001B[0m" + cashBalance);
+                System.out.println("\n\u001B[32m               Thank You !!!\u001B[0m");
+                System.out.print("\u001B[32m         Your Balance Fund is RM \u001B[0m" + cashBalance);
                 System.out.print("\n");
+                purchase.deleteReceipt();
 
                 break;
 
@@ -85,4 +86,6 @@ public class billing {
 
 
     }
+
+
 }

@@ -13,11 +13,13 @@ public class VirtualBank {
         double BankFund = 1_000_000.00;
 
         // Display the menu
-        System.out.println("VIRTUAL BANK SYSTEM");
-        System.out.println("-------------------");
-        System.out.println("1 - Bank");
-        System.out.println("2 - Exit");
-        System.out.println("-------------------");
+        System.out.println("\u001B[36m          VIRTUAL BANK SYSTEM\u001B[0m");
+        System.out.println("       +----------------------------------+");
+        System.out.println("       | Selection |   Payment            |");
+        System.out.println("       +----------------------------------+");
+        System.out.println("       |     1     |   Bank               |");
+        System.out.println("       |     2     |   Exit               |");
+        System.out.println("       +----------------------------------+\n");
         System.out.print("Enter choice --> ");
         String BankChoice = scanner.nextLine();
 
@@ -64,6 +66,7 @@ public class VirtualBank {
                     System.out.print("\n");
                     System.out.println("Thank You For Choosing our Bank !!!");
                     System.out.print("Your Bank Balance Fund is RM" + BankFund);
+                    purchase.deleteReceipt();
                     System.out.print("\n\n");
                 }
 
@@ -88,7 +91,7 @@ public class VirtualBank {
             BankChoice = scanner.nextLine();
         }
 
-        billing.main(null);
+        mainMenu.main(null);
 
     }
 }

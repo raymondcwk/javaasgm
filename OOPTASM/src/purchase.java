@@ -58,6 +58,34 @@ public class purchase {
         }
         return total;
     }
+        private static boolean isPaid = false; // Initialize as not paid
+
+        // Your other purchase-related methods and fields here
+
+        public static void setTotal(double newTotal) {
+            total = newTotal;
+        }
+
+
+
+        public static void setPaid(boolean paid) {
+            isPaid = paid;
+        }
+
+
+
+    public static void deleteReceipt() {
+        // Clear the purchasedPhones list to remove items from the old receipt
+        purchasedPhones.clear();
+
+        // Reset the total to zero to start a new receipt
+        setTotal(0.0);
+
+        // Mark the receipt as not paid
+        setPaid(false);
+    }
+
+
 
 
     public PurchasedPhone[] getPurchasedPhones() {
