@@ -38,7 +38,7 @@ public class staffLogin {
 
         while (!loggedIn) {
             // Print logo
-            System.out.println("\u001B[32m              /\\\\\\\\\\/\\\\    /\\\\\\             /\\\\\\          /\\\\\\\\\\/\\\\");
+            System.out.println("\n\u001B[32m              /\\\\\\\\\\/\\\\    /\\\\\\             /\\\\\\          /\\\\\\\\\\/\\\\");
             System.out.println("         /\\\\\\\\\\/    \\///// \\/\\\\\\            \\/\\\\\\    /\\\\\\\\\\/    \\/////");
             System.out.println("        /\\\\\\/               \\/\\\\\\            \\/\\\\\\  /\\\\\\/ ");
             System.out.println("        \\///\\\\               \\/\\\\\\            \\/\\\\\\ \\///\\\\");

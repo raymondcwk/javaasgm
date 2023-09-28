@@ -30,8 +30,10 @@ public class purchase {
 
     public static void printReceipt(double total) {
         total = 0.0;
-        System.out.println("Receipt:");
-        System.out.printf("%-5s %-20s %-10s %-10s %-10s%n", "Item", "Model", "Price(RM)", "Quantity", "Subtotal(RM)");
+        System.out.println("\n\u001B[35m                    Receipt\u001B[0m");
+        System.out.println("        _________________________________________________________________________");
+        System.out.printf("        | %-5s | %-20s | %-10s | %-10s | %-10s |%n", "Item", "Model", "Price(RM)", "Quantity", "Subtotal(RM)");
+        System.out.println("        _________________________________________________________________________");
 
         // Iterate over purchased phones and print them with updated item numbers
         int itemNumber = 1;
@@ -39,11 +41,12 @@ public class purchase {
             Phone phone = purchasedPhone.getPhone();
             double subtotal = phone.getPrice() * purchasedPhone.getQuantity();
             total += subtotal;
-            System.out.printf("%-5d %-20s %-10.2f %-10d %-10.2f%n", itemNumber, phone.getModel(), phone.getPrice(), purchasedPhone.getQuantity(), subtotal);
+            System.out.printf("        | %-5d | %-20s | %-10.2f | %-10d | %-10.2f   |%n", itemNumber, phone.getModel(), phone.getPrice(), purchasedPhone.getQuantity(), subtotal);
+            System.out.println("        _________________________________________________________________________");
             itemNumber++;
         }
 
-        System.out.printf("Total: RM %.2f%n", total);
+        System.out.printf("\n\u001B[32m        Total: RM %.2f%n\u001B[0m\n", total);
     }
 
     public static double getTotal() {

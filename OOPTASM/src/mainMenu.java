@@ -7,7 +7,7 @@ public class mainMenu {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("\u001B[36m          |\\  /|   /\\   | |\\  |   |\\  /| |--- |\\  | |    |");
+            System.out.println("\n\u001B[36m          |\\  /|   /\\   | |\\  |   |\\  /| |--- |\\  | |    |");
             System.out.println("          | \\/ |  /__\\  | | \\ |   | \\/ | |--  | \\ | |    |");
             System.out.println("          |    | /    \\ | |  \\|   |    | |--- |  \\|  \\__/ \u001B[0m\n");
             System.out.println("            +------------------------------------------+");
