@@ -67,7 +67,7 @@ public class staffLogin {
             System.out.println("  ");
             System.out.println("                        \u001B[31m!ONLY FOR AUTHORIZED USER ONLY! \u001B[0m");
             System.out.println("  ");
-            // Prompt the user for their username
+            // Prompt the user to input their username
             System.out.print("                          \u001B[33mEnter your username: ");
             String username = scanner.nextLine();
 
