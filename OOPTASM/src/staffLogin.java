@@ -1,12 +1,49 @@
 import java.util.Scanner;
 
+class person {
+    private String username;
+    private String password;
+
+    public person(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    public boolean authenticate(String enteredUsername, String enteredPassword) {
+        return username.equals(enteredUsername) && password.equals(enteredPassword);
+    }
+
+    public void login() {
+        System.out.println("Logging in as " + username);
+    }
+
+    public void showAccessDeniedMessage() {
+        System.out.println("\u001B[31m\n               <<Access denied. Incorrect username or password!>>\u001B[0m\n");
+    }
+}
+
+class Admin extends person {
+    public Admin(String username, String password) {
+        super(username, password);
+    }
+
+    @Override
+    public void login() {
+        System.out.println("\u001B[32m\n              <<Access granted. Welcome to the admin main page!>>\u001B[0m\n");
+        // Call the main menu function here
+        mainMenu.main(null);
+    }
+}
+
 public class staffLogin {
 
     public static void main(String[] args) {
-
-        // Define the correct username and password
+        // Define the correct admin username and password
         String adminUsername = "admin";
         String adminPassword = "12345";
+
+        // Create an Admin instance
+        Admin admin = new Admin(adminUsername, adminPassword);
 
         // Create a Scanner object to read user input
         Scanner scanner = new Scanner(System.in);
@@ -15,28 +52,7 @@ public class staffLogin {
         int maxAttempts = 3; // Maximum allowed login attempts
         int attempts = 0;    // Counter for login attempts
 
-        // ANSI escape code for setting text color to black
-        String blackColor = "\u001B[30m";
-        // ANSI escape code for setting text color to red
-        String redColor = "\u001B[31m";
-        // ANSI escape code for setting text color to green
-        String greenColor = "\u001B[32m";
-        // ANSI escape code for setting text color to yellow
-        String yellowColor = "\u001B[33m";
-        // ANSI escape code for setting text color to blue
-        String blueColor = "\u001B[34m";
-        // ANSI escape code for setting text color to magenta
-        String magentaColor = "\u001B[35m";
-        // ANSI escape code for setting text color to cyan
-        String cyanColor = "\u001B[36m";
-        // ANSI escape code for setting text color to white
-        String whiteColor = "\u001B[37m";
-        // ANSI escape code for resetting text color to default
-        String resetColor = "\u001B[0m";
-
-        boolean loggedIn = false; // Flag to track login status
-
-        while (!loggedIn) {
+        while (true) {
             // Print logo
             System.out.println("\n\u001B[32m              /\\\\\\\\\\/\\\\    /\\\\\\             /\\\\\\          /\\\\\\\\\\/\\\\");
             System.out.println("         /\\\\\\\\\\/    \\///// \\/\\\\\\            \\/\\\\\\    /\\\\\\\\\\/    \\/////");
@@ -51,7 +67,7 @@ public class staffLogin {
             System.out.println("  ");
             System.out.println("                        \u001B[31m!ONLY FOR AUTHORIZED USER ONLY! \u001B[0m");
             System.out.println("  ");
-            // Prompt the admin for their username
+            // Prompt the user for their username
             System.out.print("                          \u001B[33mEnter your username: ");
             String username = scanner.nextLine();
 
@@ -59,15 +75,13 @@ public class staffLogin {
             System.out.print("                          Enter your password: \u001B[0m");
             String password = scanner.nextLine();
 
-            // Check if the entered username and password match the correct credentials
-            if (username.equals(adminUsername) && password.equals(adminPassword)) {
-                loggedIn = true; // Set the flag to true for successful login
-                System.out.println("\u001B[32m\n              <<Access granted. Welcome to the admin main page!>>\u001B[0m\n");
-                // Call the main menu function here
-                mainMenu.main(null);
+            // Authenticate the user
+            if (admin.authenticate(username, password)) {
+                admin.login(); // Successful login
+                break;
             } else {
+                admin.showAccessDeniedMessage();
                 attempts++;
-                System.out.println("\u001B[31m\n               <<Access denied. Incorrect username or password!>>\u001B[0m\n");
                 if (attempts < maxAttempts) {
                     System.out.println("\u001B[34m                     You have " + (maxAttempts - attempts) + " login attempts left!\u001B[0m \n");
                 } else {
@@ -79,6 +93,5 @@ public class staffLogin {
 
         // Close the scanner
         scanner.close();
-
     }
 }
